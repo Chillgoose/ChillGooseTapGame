@@ -1,38 +1,52 @@
-let points = 0;
-let timeLeft = 24 * 60 * 60;  // 24 hours in seconds
-
-const pointsDisplay = document.getElementById("points");
-const timerDisplay = document.getElementById("timer");
-const tapButton = document.getElementById("tapButton");
-
-// Update the points display
-function updatePoints() {
-    pointsDisplay.textContent = points;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+    background-image: url('https://i.imgur.com/UCw4xUh.jpg'); /* Fun background */
+    background-size: cover;
+    margin: 0;
+    padding: 0;
 }
 
-// Timer logic
-function updateTimer() {
-    let hours = Math.floor(timeLeft / 3600);
-    let minutes = Math.floor((timeLeft % 3600) / 60);
-    let seconds = timeLeft % 60;
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
 
-    timerDisplay.textContent = `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+#game-area {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border: 2px solid #ccc;
+    margin: 20px auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
+}
 
-    if (timeLeft > 0) {
-        timeLeft--;
-    } else {
-        clearInterval(timerInterval);
-        tapButton.disabled = true; // Disable tapping after 24 hours
-        alert("Game Over! Please come back tomorrow.");
+#info {
+    margin: 20px;
+}
+
+#score, #timer, #attempts, #message {
+    font-size: 18px;
+    color: #444;
+}
+
+.egg {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    background-image: url('https://i.imgur.com/C1kGuve.png'); /* Goose egg image */
+    background-size: cover;
+    cursor: pointer;
+    animation: fall 4s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -60px;
+    }
+    100% {
+        top: 500px; /* Game area height */
     }
 }
-
-// Handle the tap event
-tapButton.addEventListener("click", () => {
-    points++;
-    updatePoints();
-});
-
-// Start the timer
-const timerInterval = setInterval(updateTimer, 1000);
-

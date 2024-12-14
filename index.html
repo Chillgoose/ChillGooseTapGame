@@ -7,16 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
-        <h1>Chill Goose Tap Game</h1>
-        <p>Tap the Goose to earn points!</p>
-        <button id="tapButton">Tap the Goose!</button>
-        <p>Points: <span id="points">0</span></p>
-        <p>Time remaining: <span id="timer">24:00:00</span></p>
-        <div class="footer">
-            <p>Enjoy the game! Come back tomorrow for new rewards.</p>
-        </div>
+    <h1>Chill Goose Tap Game</h1>
+    <p>Tap the falling goose eggs! 🥚</p>
+    
+    <div id="game-area">
+        <!-- Eggs will dynamically appear here -->
     </div>
+    
+    <div id="info">
+        <p id="score">Points: 0</p>
+        <p id="timer">Time remaining: 20s</p>
+        <p id="attempts">Attempts left: 3</p>
+    </div>
+
+    <p id="message">You have 3 attempts daily. Tap the eggs to earn points!</p>
     <script src="script.js"></script>
 </body>
 </html>
