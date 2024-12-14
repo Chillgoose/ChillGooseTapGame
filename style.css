@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f0f8ff;
-    background-image: url('https://i.imgur.com/UCw4xUh.jpg'); /* Background image */
+    background-image: url('https://www.dropbox.com/s/h59iyl1y42u47pm/chill-goose-background.jpg?raw=1'); /* Background image */
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -36,7 +36,7 @@ h1 {
     position: absolute;
     width: 50px;
     height: 60px;
-    background-image: url('https://i.imgur.com/C1kGuve.png'); /* Goose egg image */
+    background-image: url('https://www.dropbox.com/s/6xcyf8hdj69hjjs/goose-egg.png?raw=1'); /* Goose egg image */
     background-size: cover;
     cursor: pointer;
     animation: fall 4s linear infinite;
